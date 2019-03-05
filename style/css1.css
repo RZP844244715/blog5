@@ -1,0 +1,36 @@
+*{margin:0;padding:0}
+a{text-decoration: none}
+body{
+    background: #eee;
+}
+kbd{
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    /* border:1px solid red; */
+    text-align: center;
+    line-height: 5em;
+    margin: 6px ;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    background:wheat; 
+    border-radius: 4px;
+}
+/* kbd:hover button{
+    display: inline-block;
+} */
+main .warpper kbd:hover button{
+    display: inline-block;
+}
+main .warpper{
+    margin-top: 200px;
+    text-align: center;
+}
+main .warpper button{
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: none;
+    background-color:yellowgreen;
+}

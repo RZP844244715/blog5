@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/css1.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="warpper" id="x" ></div>
+    </main>
+    <footer></footer>
+
+    <script>
+        var keys = {
+            0:['q','w','e','r','t','y','u','i','o','p'],
+            1:['a','s','d','f','g','h','j','k','l'],
+            2:['z','x','c','v','b','n','m'],
+            length:3
+        }
+        
+        var hash = {
+            q:'qq.com',
+            w:'weibo.com',
+            e:'ele.me',
+            r:'renren.com',
+            t:"taobao.com",
+            y:"youzan.com",
+            u:'ukll.om',
+            i:'iqiyi',
+            o:'opear.com',
+            p:'photo.com'
+        }
+
+        var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')   
+            if(hashInLocalStorage){
+                hash = hashInLocalStorage 
+            }
+        index = 0
+        
+        while(index < keys['length']){
+            divXXXXX = document.createElement('div') //创建一个div
+            x.appendChild(divXXXXX)  //把div标签 给X   也就是main里面
+            row = keys[index]   //keys 的索引   0  1  2
+            index2 = 0
+            while(index2 < row['length']){  //遍历出 1 2 3数组中的 每个索引   0-9  0-8  0-6
+            kbdXXXXX = document.createElement('kbd') //创建 kbd标签  放在容器kbdXXXXX中
+            kbdXXXXX.textContent = row[index2]   //在kbd标签中 写入内容 字符q
+            buttonXXXXX = document.createElement('button')
+            buttonXXXXX.textContent = '改'
+            buttonXXXXX.id = row[index2]
+                buttonXXXXX.onclick = function(fhksddhjk){
+                    key = (fhksddhjk['target']['id'])
+                    x = prompt('写入您常用的网址')
+                    hash[key] = x
+                    localStorage.setItem('zzz', JSON.stringify(hash))
+                    console.log(hash)
+                }
+            kbdXXXXX.appendChild(buttonXXXXX)
+            divXXXXX.appendChild(kbdXXXXX)   //把kbd标签放在 divXXXXX容器里  就是div标签里面
+            index2++
+            }
+            
+            index++
+        }
+            document.onkeypress = function(fhksddhjk){
+                key = (fhksddhjk['key'])
+                website = hash[key]
+                // location.href = 'http://'+website
+                //新窗口打开页面如下代码：
+                window.open('http://'+website, '_blank')
+            }
+    </script>
+</body>
+</html>
