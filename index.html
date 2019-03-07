@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>我的导航</title>
     <link rel="stylesheet" href="./style/css1.css">
 </head>
 <body>
     <header></header>
     <main>
-        <div class="warpper" id="x" ></div>
+        <div class="warpper" id="main" ></div>
     </main>
     <footer></footer>
 
@@ -23,16 +23,19 @@
         }
         
         var hash = {
-            q:'qq.com',
+            // q:'qq.com',
             w:'weibo.com',
             e:'ele.me',
-            r:'renren.com',
+            // r:'renren.com',
             t:"taobao.com",
-            y:"youzan.com",
-            u:'ukll.om',
-            i:'iqiyi',
-            o:'opear.com',
-            p:'photo.com'
+            // y:'youzan.com',
+            u:'tanukulele.com',
+            i:'iqiyi.com',
+            z:'zhihu.com',
+            j:'jingdong.com',
+            y:'yy.com',
+            a:'1688.com',
+            d:'dangdang.com'
         }
 
         var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')   
@@ -42,25 +45,38 @@
         index = 0
         
         while(index < keys['length']){
-            divXXXXX = document.createElement('div') //创建一个div
-            x.appendChild(divXXXXX)  //把div标签 给X   也就是main里面
+            div = document.createElement('div') //创建一个div
+            div.className = 'row'
+            main.appendChild(div)  //把div标签 给X   也就是main里面
             row = keys[index]   //keys 的索引   0  1  2
             index2 = 0
             while(index2 < row['length']){  //遍历出 1 2 3数组中的 每个索引   0-9  0-8  0-6
-            kbdXXXXX = document.createElement('kbd') //创建 kbd标签  放在容器kbdXXXXX中
-            kbdXXXXX.textContent = row[index2]   //在kbd标签中 写入内容 字符q
-            buttonXXXXX = document.createElement('button')
-            buttonXXXXX.textContent = '改'
-            buttonXXXXX.id = row[index2]
-                buttonXXXXX.onclick = function(fhksddhjk){
+            kbd = document.createElement('kbd') //创建 kbd标签  放在容器kbd中
+            span = document.createElement('span')
+            span.textContent = row[index2]   //在kbd标签中 写入内容 字符q
+            span.className = 'text'
+            kbd.appendChild(span)
+            kbd.className = 'key'
+            button = document.createElement('button')
+            button.textContent = '编辑'
+            button.id = row[index2]
+            img = document.createElement('img')
+            if(hash[row[index2]]){
+                img.src ='http://'+ hash[row[index2]]+'/favicon.ico'
+            }else{
+                img.src = './images/pic.png'
+            }
+            
+                button.onclick = function(fhksddhjk){
                     key = (fhksddhjk['target']['id'])
                     x = prompt('写入您常用的网址')
                     hash[key] = x
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
                 }
-            kbdXXXXX.appendChild(buttonXXXXX)
-            divXXXXX.appendChild(kbdXXXXX)   //把kbd标签放在 divXXXXX容器里  就是div标签里面
+            kbd.appendChild(img)
+            kbd.appendChild(button)
+            div.appendChild(kbd)   //把kbd标签放在 div容器里  就是div标签里面
             index2++
             }
             

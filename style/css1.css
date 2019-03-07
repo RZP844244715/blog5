@@ -1,36 +1,72 @@
 *{margin:0;padding:0}
 a{text-decoration: none}
 body{
-    background: #eee;
+    background: #eee url(../images/wall1.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
 }
 kbd{
     display: inline-block;
-    width: 5em;
-    height: 5em;
-    /* border:1px solid red; */
-    text-align: center;
-    line-height: 5em;
-    margin: 6px ;
     text-transform: uppercase;
-    font-weight: bold;
     position: relative;
-    background:wheat; 
-    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-/* kbd:hover button{
-    display: inline-block;
-} */
+.row{
+    margin: 16px;
+}
+.row .key{
+    width: 60px;
+    height: 50px;
+    background: linear-gradient(to bottom, #292929 0%,#111111 100%);
+    color: #c5c5c5;
+    border-radius: 8px;
+    border: 1px solid #373737;
+    box-shadow: 0 0 0 1px #1a1b1c,0 0 0 2px #1f2020,0 3px 0 4px #000000;
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+    margin: 0 10px;
+    position: relative;
+}
+.row .key .text{
+    position: absolute;
+    left: 28px;
+    top:12px;
+}
+.row .key img{
+    width:16px;
+    height: 16px;
+    position: absolute;
+    left: 8px;
+    bottom: 22px;
+}
 main .warpper kbd:hover button{
     display: inline-block;
 }
-main .warpper{
-    margin-top: 200px;
+#main{
+    display: inline-block;
+}
+main{
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+main .warpper{
+    background: rgba(255,255,255,0.2);
+    border-radius:10px;
 }
 main .warpper button{
     right: 0;
     bottom: 0;
     position: absolute;
-    display: none;
-    background-color:yellowgreen;
+    display: none;  
+    /* background-color:yellowgreen; */
+}
+main .warpper div:nth-child(2){
+    margin-left: -30px;
+}
+main .warpper div:nth-child(3){
+    margin-left: -110px;
 }
