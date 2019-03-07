@@ -1,7 +1,7 @@
 *{margin:0;padding:0}
 a{text-decoration: none}
 body{
-    background: #eee url(../images/wall1.jpg) no-repeat center center;
+    background: #eee url(../wall1.jpg) no-repeat center center;
     background-size: cover;
     height: 100vh;
 }
